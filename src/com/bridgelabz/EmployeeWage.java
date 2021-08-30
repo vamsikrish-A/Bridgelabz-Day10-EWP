@@ -9,10 +9,7 @@ public class EmployeeWage {
     public static final int MAX_HRS_IN_MONTH = 100;
 
 
-    public static void main(String[] args) {
-        System.out.println("Welcome to Employee Wages. ");
-
-
+    public static  int empWageSystem() {
         int empHours = 0,  empWagePerMonth = 0, totalHrs = 0, totalWorkingDays = 0;
         while (totalHrs <= MAX_HRS_IN_MONTH && totalWorkingDays < NUM_OF_WORKING_DAYS) {
             totalWorkingDays++;
@@ -34,6 +31,15 @@ public class EmployeeWage {
         System.out.println("Employee total Hours ::"+totalHrs);
         int totalEmpWage = totalHrs * WAGE_PER_HOUR;
         System.out.println("Employee per month::"+totalEmpWage);
+        return totalEmpWage;
+
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Welcome to Employee Wages. ");
+        empWageSystem();
+
+
     }
 
 }
