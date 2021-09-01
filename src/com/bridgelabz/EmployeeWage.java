@@ -69,9 +69,10 @@ public  class EmployeeWage implements ImanageEmpWage{
         EmployeeWage.empWageSystem("Samsung", 25, 26, 100);
         EmployeeWage.empWageSystem("Nokia",24,25,97);
         EmployeeWage.empWageSystem("Sony",25,25,96);
-        //EmployeeWage.computeEmpWage();
-        //System.out.println("total Wage for Samsung: "+EmployeeWage.getTotalEmpWage("Samsung"));
-        //System.out.println("total Wage for Nokia: "+EmployeeWage.getTotalEmpWage("Nokia"));
+        EmployeeWage.computeEmpWage();
+        System.out.println("total Wage for Samsung: "+EmployeeWage.getTotalEmpWage("Samsung"));
+        System.out.println("total Wage for Nokia: "+EmployeeWage.getTotalEmpWage("Nokia"));
+        System.out.println("total Wage for Sony: "+EmployeeWage.getTotalEmpWage("Sony"));
 
     }
 }
