@@ -1,6 +1,11 @@
 package com.bridgelabz;
 
-public class EmployeeWage {
+ interface ImanageEmpWage {
+    public void empWageSystem();
+}
+
+
+public class EmployeeWage implements ImanageEmpWage {
 
 
     public static final int FULL_DAYS_HOUR = 2;
@@ -17,6 +22,9 @@ public class EmployeeWage {
         this.maxHoursPerMonth = maxHrsPerMonth;
         this.numOfWorkingDays = numOfWorkingDays;
         this.wagePerHour = wagePerHour;
+    }
+    public void setTotalEmpWage(int totalEmpWage) {
+        this.totalEmpWage = totalEmpWage;
     }
 
     public void empWageSystem() {
