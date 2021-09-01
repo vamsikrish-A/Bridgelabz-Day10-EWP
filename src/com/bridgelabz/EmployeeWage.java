@@ -1,34 +1,24 @@
 package com.bridgelabz;
 
- interface ImanageEmpWage {
-    public void empWageSystem();
-}
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
 
-
-public class EmployeeWage implements ImanageEmpWage {
-
-
+public class EmployeeWage implements ImanageEmpWage{
     public static final int FULL_DAYS_HOUR = 2;
     public static final int PART_DAYS_HOURS = 1;
 
-    private final String company;
-    private final int wagePerHour;
-    private final int numOfWorkingDays;
-    private final int maxHoursPerMonth;
-    private int totalEmpWage;
+    private LinkedList<CompanyEmpWage> companyEmpWageLinkedList;
+    private Map<String, CompanyEmpWage> companyEmpWageMap;
 
-    public EmployeeWage (String company, int wagePerHour, int numOfWorkingDays, int maxHrsPerMonth) {
-        this.company = company;
-        this.maxHoursPerMonth = maxHrsPerMonth;
-        this.numOfWorkingDays = numOfWorkingDays;
-        this.wagePerHour = wagePerHour;
-    }
-    public void setTotalEmpWage(int totalEmpWage) {
-        this.totalEmpWage = totalEmpWage;
+    public EmployeeWage() {
+        companyEmpWageLinkedList = new LinkedList<>();
+        companyEmpWageMap = new HashMap<>();
     }
 
-    public void empWageSystem() {
-        int empHours = 0,  totalHrs = 0, totalWorkingDays = 0;
+
+    public void empWageSystem(String company, int wagePerHour, int numOfWorkingDays, int maxHoursPerMonth) {
+        int empHours = 0, totalHrs = 0, totalWorkingDays = 0;
         while (totalHrs <= maxHoursPerMonth && totalWorkingDays < numOfWorkingDays) {
             totalWorkingDays++;
             int checkOut = (int) Math.floor(Math.random() * 10) % 3;
@@ -43,29 +33,18 @@ public class EmployeeWage implements ImanageEmpWage {
                     empHours = 0;
             }
             totalHrs += empHours;
-            System.out.println("Day#:"+totalWorkingDays + " Emp hr:"+empHours);
+            System.out.println("Day#:" + totalWorkingDays + " Emp hr:" + empHours);
         }
 
-        totalEmpWage = totalHrs * wagePerHour;
 
-    }
-    @Override
-    public String toString() {
-        return "Total Emp Wage for Company: " +company+ " is: " +totalEmpWage;
     }
 
 
     public static void main(String[] args) {
-        EmployeeWage samSung = new EmployeeWage("SAMSUNG",20, 25, 90);
-        EmployeeWage noKia = new EmployeeWage("NOKIA", 25, 25, 80);
-
-        samSung.empWageSystem();
-        System.out.println(samSung);
-
-        noKia.empWageSystem();
-        System.out.println(noKia);
-
+        ImanageEmpWage EmployeeWage = new EmployeeWage();
+        EmployeeWage.empWageSystem("Samsung", 25, 26, 100);
+        EmployeeWage.empWageSystem("Nokia",24,25,97);
+        EmployeeWage.empWageSystem("Sony",25,25,96);
 
     }
-
 }
