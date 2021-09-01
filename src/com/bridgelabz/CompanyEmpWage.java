@@ -1,15 +1,15 @@
 package com.bridgelabz;
 
 public class CompanyEmpWage {
-    private final String company;
-    private final int wagePerHour;
-    private final int numOfWorkingDays;
-    private final int maxHoursPerMonth;
-    private int totalEmpWage;
+    public final String company;
+    public final int wagePerHour;
+    public final int numOfWorkingDays;
+    public final int maxHoursPerMonth;
+    public int totalEmpWage;
 
-    public CompanyEmpWage (String company, int wagePerHour, int numOfWorkingDays, int maxHrsPerMonth) {
+    public CompanyEmpWage (String company, int wagePerHour, int numOfWorkingDays, int maxHoursPerMonth) {
         this.company = company;
-        this.maxHoursPerMonth = maxHrsPerMonth;
+        this.maxHoursPerMonth = maxHoursPerMonth;
         this.numOfWorkingDays = numOfWorkingDays;
         this.wagePerHour = wagePerHour;
     }
